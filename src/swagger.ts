@@ -1,7 +1,8 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import { version } from '../../package.json';
 import { Request, Response, NextFunction } from 'express';
+
+const { version } = require('../../package.json');
 
 const options: swaggerJsdoc.Options = {
   definition: {
