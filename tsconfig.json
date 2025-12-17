@@ -1,6 +1,21 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+     "target": "es2018",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
