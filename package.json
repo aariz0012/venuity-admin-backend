@@ -2,11 +2,13 @@
   "name": "venuity-admin-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo \"No build step required\" && exit 0",
-    "dev": "nodemon server.js"
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "render-build": "npm install && npm run build",
+    "render-start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
