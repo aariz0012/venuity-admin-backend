@@ -7,6 +7,9 @@ import morgan from 'morgan';
 import { connectDB } from './config/db';
 import { errorHandler } from './middleware/error';
 import routes from './routes';
+import App from './app';
+import 'module-alias/register';
+import 'reflect-metadata';
 
 // Load environment variables
 config();
@@ -37,11 +40,12 @@ app.get('/health', (req, res) => {
 app.use(errorHandler);
 
 // Start server
-const PORT = process.env.PORT || 5001;
+const port = parseInt(process.env.PORT || '5001', 10);
+const server = new App(port);
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-server.listen(PORT, () => {
-  console.log(`Server running in ${NODE_ENV} mode on port ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server running in ${NODE_ENV} mode on port ${port}`);
 });
 
 // Handle unhandled promise rejections
