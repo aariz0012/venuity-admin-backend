@@ -12,7 +12,7 @@ import swaggerDocs from './swagger';
 config();
 
 class App {
-  public app: Application;
+  public app: express.Application;
   public port: number;
 
   constructor(port: number) {
